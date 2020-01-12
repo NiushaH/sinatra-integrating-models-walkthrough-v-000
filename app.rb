@@ -10,6 +10,7 @@ class App < Sinatra::Base
     # text_from_user = params[:user_text]
     # @analyzed_text = TextAnalyzer.new(text_from_user)
     @analyzed_text = TextAnalyzer.new(params[:user_text])
+    "Most Common Letter: <%= @analyzed_text.most_used_letter.keys.first.upcase %> used <%= @analyzed_text.most_used_letter.values.first %> times"
     erb :results
   end
 end
